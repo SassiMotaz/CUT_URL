@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Traits
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-5 text-black">
+		<h1 style="color:#263238;" class="fw-bolder" >Les Traits
+		</h1>
+
+	</div>
+	<div class="row mt-1 me-5 ms-5 ">
+
+		<div class="col pt-5">
+			<h2 class="text-black text-center ">Raccourci n'importe quel lien</h2>
+			<p class="fs-5 text-black fw-light lh-lg pt-3">Modifiez l'URL de destination de tout lien court. CUTURL facilite l'attribution d'une nouvelle URL à l'un de vos liens, que vous souhaitiez corriger une erreur de destination, mettre à jour une destination ou faire expirer manuellement d'anciens liens.</p>
+			<p>
+				{% if is_granted('IS_ANONYMOUS') %}
+					<a href="{{path('app_homepage') }}" class="btn btn-primary">Raccourci</a>
+				{% endif %}
+			</p>
+		</div>
+		<div class="col">
+			<img src="/images/media1.gif" height="80%" width="100%">
+
+		</div>
+
+	</div>
+	<hr>
+	<div class="row mt-2 me-5 ms-5">
+		<div class="col">
+			<img src="/images/sms.gif">
+		</div>
+		<div class="col pt-5">
+			<h2 class="text-black text-center">Transformez vos liens</h2>
+			<p class="fs-5 text-black fw-light lh-lg pt-3">Avec la confiance vient l'action. Les entreprises qui partagent des liens personnalisés constatent une augmentation des clics. C'est simple : si votre public fait confiance à vos liens et sait où ils mènent, il est plus susceptible de cliquer dessus.</p>
+            <p>
+				{% if is_granted('IS_ANONYMOUS') %}
+					<a href="{{path('app_homepage') }}" class="btn btn-primary">Transformez</a>
+				{% endif %}
+			</p>
+        </div>
+	</div>
+	<hr>
+	<div class="row mt-5 me-5 ms-5 ">
+		<div class="col pt-5">
+			<h2 class="text-black text-center ">Informations à chaque clic</h2>
+			<p class="fs-5 text-black fw-light lh-lg pt-3">Tirez parti des points de données clés en temps réel à chaque clic, comme les données géographiques et les informations sur les canaux de référence, pour prendre des décisions plus intelligentes, basées sur les données, sur où et comment investir les ressources de votre marque.</p>
+            <p>
+				{% if is_granted('IS_ANONYMOUS') %}
+					<a href="{{ path('app_tarification') }}" class="btn btn-primary">Commencez Gratuitement</a>
+				{% endif %}
+			</p>
+        </div>
+		<div class="col">
+			<img src="/images/media3.gif" height="80%" width="100%">
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

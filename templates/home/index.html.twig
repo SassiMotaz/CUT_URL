@@ -1,0 +1,124 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil
+{% endblock %}
+
+{% block body %}
+<main>
+
+	{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+		<div class="card mb-3">
+			<div class="row g-5">
+				<div class="col-md-4">
+					<img src="/images/font1.gif" class="img-fluid rounded-start" alt="...">
+				</div>
+				<div class="col">
+					<div class="card-body">
+						<h2 class="card-title mt-5 text-center fw-bolder " style="color:#263238;">
+							BIENVENUE
+							{{app.user.nom |upper}}
+						</h2>
+						<p class="card-text mt-5  ">
+							<h4 class="fst-italic font-monospace fw-normal text-secondary ">Un raccourcisseur d'URL construit avec des outils puissants pour vous aider à développer et à protéger votre marque.</h4>
+						</p>
+						<p class="card-text ">
+							<h4 class="fst-italic font-monospace fw-normal text-secondary ">Votre marque n’a pas été construite pour être cachée. Aidez-la à se démarquer avec des liens de marque qui conduisent plus de clics.</h4>
+						</p>
+						<p class="card-text">
+							{% if is_granted('IS_ANONYMOUS') %}
+								<a href="{{ path('app_register') }}" class="btn btn-primary">Commencez Gratuitement</a>
+							{% endif %}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Marketing messaging and featurettes================================================== -->
+		<!-- Wrap the rest of the page in another container to center all the content. -->
+		<section class="col col-lg-10 mx-auto mb-2">
+			<div class="card" id="shortenCard">
+				<div class="card-body bg-light">
+					<form id="shortenForm">
+						<div class="col">
+							<div class="input-group">
+								<input type="text" class="form-control form-control-lg" name="url" id="url" placeholder="Votre adresse à réduire" autocomplete="off" required>
+								<button type="submit" class="btn btn-success" id="btnShortenUrl">Réduire l'URL</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<div
+			class="container marketing">
+
+			<!-- Three columns of text below the carousel -->
+			<hr class="featurette-divider">
+		</div>
+		<!-- /.container -->
+	</main>
+{% else %}
+<div class="card mb-3">
+			<div class="row g-5">
+				<div class="col-md-4">
+					<img src="/images/font.gif" class="img-fluid rounded-start" alt="...">
+				</div>
+				<div class="col">
+	<div class="card-body">
+
+		<h2 class="card-title mt-5 text-center fw-bolder" style="color:black;">
+			BIENVENUE SUR CUTURL
+		</h2>
+		<p class="card-text mt-5  ">
+			<h4 class="fst-italic font-monospace fw-normal ">Un raccourcisseur d'URL construit avec des outils puissants pour vous aider à développer et à protéger votre marque.</h4>
+		</p>
+		<p class="card-text ">
+			<h4 class="fst-italic font-monospace fw-normal ">Votre marque n’a pas été construite pour être cachée. Aidez-la à se démarquer avec des liens de marque qui conduisent plus de clics.</h4>
+		</p>
+		<p class="card-text">
+			{% if is_granted('IS_ANONYMOUS') %}
+				<a href="{{ path('app_register') }}" class="btn btn-primary">Commencez Gratuitement</a>
+			{% endif %}
+		</p>
+	</div>
+</div></div></div><!-- Marketing messaging and featurettes================================================== --><!-- Wrap the rest of the page in another container to center all the content. --><section class="col col-lg-10 mx-auto mb-2"><div class="card" id="shortenCard">
+<div class="card-body bg-light">
+	<form id="shortenForm">
+		<div class="col">
+			<div class="input-group">
+				<input type="text" class="form-control form-control-lg" name="url" id="url" placeholder="Votre adresse à réduire" autocomplete="off" required>
+				<button type="submit" class="btn btn-success" id="btnShortenUrl">Réduire l'URL</button>
+			</div>
+		</div>
+	</form>
+</div></div></section><divclass="container marketing"><!-- Three columns of text below the carousel --><hr class="featurette-divider"><div class="row">
+<div class="col text-center border-end  ">
+	<img src="{{ asset('images/easy.png') }}" alt="" sizes="" srcset="">
+	<h4>Facile</h4>
+	<p>CUTURL est simple et rapide, entrez le lien long pour obtenir votre lien raccourci</p>
+</div>
+<div class="col text-center border-end ">
+	<img src="{{ asset('images/link.png') }}" alt="" sizes="" srcset="">
+	<h4>Raccourci</h4>
+	<p>Utilisez n'importe quel lien, quelle que soit sa taille, CUTURL raccourcit toujours</p>
+</div>
+<div class="col text-center">
+	<img src="{{ asset('images/sec.png') }}" alt="" sizes="" srcset="">
+	<h4>Sécurise</h4>
+	<p>C'est sécurisé, notre service a le protocole HTTPS et le cryptage des données</p>
+</div></div><hr class="featurette-divider"><div class="row">
+<div class="col text-center border-end ">
+	<img src="{{ asset('images/stat.png') }}" alt="" sizes="" srcset="">
+	<h4>Statistiques</h4>
+	<p>Vérifiez le nombre de clics reçus par votre URL raccourcie</p>
+</div>
+<div class="col text-center border-end ">
+	<img src="{{ asset('images/danger.png') }}" alt="" sizes="" srcset="">
+	<h4>Fiable</h4>
+	<p>Tous les liens qui tentent de diffuser du spam, des virus et des logiciels malveillants sont supprimés</p>
+</div>
+<div class="col text-center">
+	<img src="{{ asset('images/dev.png') }}" alt="" sizes="" srcset="">
+	<h4>Dispositifs</h4>
+	<p>Compatible avec les smartphones, les tablettes et les ordinateurs de bureau</p>
+</div></div><hr class="featurette-divider"></div><!-- /.container --></main>{% endif %}{% endblock %}{% block footer %}{% endblock %}{% block javascripts %}{{ encore_entry_script_tags('home') }}{% endblock %}
