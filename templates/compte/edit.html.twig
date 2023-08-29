@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit
+{% endblock %}
+
+{% block body %}
+	<div class="container  mt-5">
+		<div class="row">
+			<div class="col">
+				{% for flashError in app.flashes('verify_email_error') %}
+					<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+				{% endfor %}
+
+				<h1 class="h3 mb-3 fw-bolder text-black" style="color:#263238;">Modifier Profil</h1>
+
+				{{ form_start(form) }}
+				{{ form_row(form.Nom, {
+            label: 'Nom'
+        }) }}
+				{{ form_row(form.Prenom, {
+            label: 'Prénom'
+        }) }}
+				{{ form_row(form.email, {
+            label: 'Adresse e-mail'
+        }) }}
+				<div class="input-group date" data-provide="datepicker">
+
+					<div class="input-group-addon">
+
+						{{ form_row(form.Date, {
+            label: 'Date de naissance'
+        }) }}
+
+					</div>
+				</div>
+
+				{{ form_row(form.adr, {
+            label: 'Adresse '
+        }) }}
+				{{ form_row(form.type, {
+            label: 'Profession'
+        }) }}
+
+				{{ form_row(form.tel, {
+            label: 'Téléphone'
+        }) }}
+				{{ form_row(form.img, {
+            label: 'Photo'
+        }) }}
+
+
+				<button type="submit" class="btn btn-primary mt-2 me-2">Modfication</button>
+				{{ form_end(form) }}
+			</div>
+			<div class="col col-lg-6">
+				<img src="/images/formulaire-dinscription.png" alt="" srcset="">
+			</div>
+		</div>
+	</div>
+</div>{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Tarfication
+{% endblock %}
+
+
+{% block body %}
+	<div class="container mt-5 text-secondary">
+		<h1 style="color:#263238;" class="fw-bolder"  >Les Tarfications</h1>
+		<h3 style="color:#263238;" class="pt-2">Choisissez votre forfait ci-dessous: </h3>
+	</div>
+	<div class="container mt-5 text-black fw-bolder ">
+		<div class="row">
+			<div class="col">
+				<div class="card text-dark bg-light text-center ">
+					<div class="card-header ">
+						Gratuit
+					</div>
+					<div class="card-body">
+						<h5 class="card-title"></h5>
+						<p class="card-text">0 TND</p>
+						<a href="{{ path('app_register') }}" class="btn btn-primary">Inscription</a>
+					</div>
+					<div class="card-footer text-muted">
+						<h6>Comprend:</h6>
+						Accès à l'intégration.
+						
+						<br>
+						Historique des liens.
+						<br>
+						Clics illimités.
+						<br>
+						
+						Statistiques.
+						<br>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card text-dark bg-light text-center ">
+					<div class="card-header  ">
+						Prime
+					</div>
+					<div class="card-body">
+						<h5 class="card-title"></h5>
+						<p class="card-text">5 TND</p>
+						<a href="#" class="btn btn-primary">Inscription</a>
+					</div>
+					<div class="card-footer text-muted">
+						<h6>Tout en gratuit, plus:</h6>
+						Créer et partager des liens de marque.
+						<br>
+						Moitiés arrière personnalisables.
+						<br>
+						Codes QR<br>
+                        <br>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

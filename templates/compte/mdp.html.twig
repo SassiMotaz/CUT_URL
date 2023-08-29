@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit
+{% endblock %}
+
+{% block body %}
+	<div class="container  mt-5">
+		<h1 class="h3 mb-3 fw-bolder text-black" style="color:#263238;" >Confidentialité</h1>
+		{{ form_start(form) }}
+		
+		{{ form_row(form.oldPassword, {
+            label: 'Ancien Mot De Passe'
+        }) }}
+
+		{{ form_row(form.newPassword, {
+            label: 'Nouveau Mot de passe'
+        }) }}
+
+		{{ form_row(form.confirmPassword, {
+            label: 'Confirmation Mot De Passe'
+        }) }}
+		<button type="submit" class="btn btn-primary mt-2">Modification</button>
+		{{ form_end(form) }}
+	</div>
+{% endblock %}
